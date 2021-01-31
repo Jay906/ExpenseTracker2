@@ -1,0 +1,95 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --mainWhite: #f4f4f4;
+  --mainColor: #395e7e;
+  --secondaryColor: #1a354e;
+  --success: #30b84d;
+  --danger: #d12f2f;
+  --bg-success: rgba(58, 223, 43, 0.5);
+  --bg-danger: rgba(187, 8, 8, 0.5);
+}
+
+body {
+  font-size: 0.9rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.success {
+  color: var(--success);
+}
+
+.danger {
+  color: var(--danger);
+}
+
+.primary {
+  color: var(--mainColor);
+}
+
+.bg-primary {
+  background: var(--mainColor);
+  color: #f4f4f4;
+}
+
+.bg-success {
+  background: var(--bg-success) !important;
+}
+
+.bg-danger {
+  background: var(--bg-danger) !important;
+}
+
+.form-control {
+  display: block;
+  width: 80%;
+  margin: 3px auto;
+  padding: 8px;
+}
+
+form {
+  position: relative;
+}
+
+.add {
+  position: absolute;
+  bottom: 5%;
+  left: 90%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  background: var(--mainColor);
+  color: #f4f4f4;
+  border: none;
+  outline: none;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  box-shadow: 2px 2px 5px #999;
+}
+
+.overview {
+  height: 100%;
+  width: 90%;
+  margin: auto;
+}
+
+.overview .income-overview,
+.overview .expense-overview {
+  position: relative;
+  width: 90%;
+  height: 45%;
+  margin: auto;
+}
