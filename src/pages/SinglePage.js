@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { SingleItemContainer } from "../styled-component/styled-components";
 import { FaTrash, FaEdit } from "react-icons/fa";
@@ -17,7 +17,7 @@ function SinglePage() {
   // };
 
   const _data = filterItems(id);
-  if (_data.length != 0) {
+  if (_data.length !== 0) {
     const total = _data.reduce((acc, curr) => acc + curr.amount, 0);
     return (
       <SingleItemContainer>

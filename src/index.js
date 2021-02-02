@@ -6,11 +6,16 @@ import DataProvider from "./components/context";
 
 const incomes = JSON.parse(localStorage.getItem("incomes")) || [];
 const expenses = JSON.parse(localStorage.getItem("expenses")) || [];
+const settings = JSON.parse(localStorage.getItem("settings")) || {};
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <DataProvider incomes={incomes} expenses={expenses}>
+      <DataProvider
+        incomes={incomes}
+        expenses={expenses}
+        settingParams={settings}
+      >
         <App />
       </DataProvider>
     </Router>

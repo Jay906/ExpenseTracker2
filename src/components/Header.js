@@ -6,30 +6,29 @@ import { DataContext } from "./context";
 function HeaderComponent() {
   const context = useContext(DataContext);
   const { totalIncome, totalExpense, balance, currency } = context;
-  const { value: currencyValue } = currency;
   return (
     <Header>
       <section className="header-top">
         <p className="success">Available Savings</p>
-        <h2>{currencyValue} 0</h2>
+        <h2>{currency} 0</h2>
         <p>{getDate()}</p>
       </section>
       <div className="banner">
         <div className="text-center">
           <p>
-            {currencyValue} {totalIncome}
+            {currency} {totalIncome}
           </p>
           <p>Income</p>
         </div>
         <div className="text-center">
           <p>
-            {currencyValue} {totalExpense}
+            {currency} {totalExpense}
           </p>
           <p>Expense</p>
         </div>
         <div className="text-center">
           <p>
-            {currencyValue} {balance}
+            {currency} {balance}
           </p>
           <p>Balance</p>
         </div>
