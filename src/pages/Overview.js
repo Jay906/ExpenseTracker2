@@ -1,9 +1,8 @@
-import React, { useContext, useState } from "react";
-import { Bar, Doughnut } from "react-chartjs-2";
+import React, { useContext } from "react";
+import { Bar } from "react-chartjs-2";
 import { DataContext } from "../components/context";
 
 function Overview() {
-  const [show, setShow] = useState(false);
   const context = useContext(DataContext);
   const { state } = context;
   const { incomes, expenses } = state;
@@ -11,7 +10,6 @@ function Overview() {
   const expenseLabels = [
     ...new Set(expenses.map((expense) => expense.category)),
   ];
-  console.log(expenseLabels);
   const incomeObj = {};
   const expenseObj = {};
 
@@ -42,7 +40,7 @@ function Overview() {
         label: "Income overview",
         backgroundColor: "rgba(58, 223, 43, 0.5)",
         hoverBackgroundColor: "rgba(58, 223, 43, 0.8)",
-        hoverBackgroundColor: "rgb(58, 223, 43)",
+        hoverBorderColor: "rgb(58, 223, 43)",
         borderWidth: 1,
         data: incomeData,
       },
@@ -66,9 +64,20 @@ function Overview() {
   return (
     <div className="overview">
       <div className="income-overview">
-        <Doughnut
+        <Bar
           data={incomeChartData}
-          option={{ maintainAspectRatio: false }}
+          options={{
+            maintainAspectRatio: false,
+            scales: {
+              yAxes: [
+                {
+                  ticks: {
+                    beginAtZero: true,
+                  },
+                },
+              ],
+            },
+          }}
         />
       </div>
       <div className="expense-overview">

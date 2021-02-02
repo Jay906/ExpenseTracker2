@@ -22,13 +22,13 @@ const validate = (values) => {
   return errors;
 };
 
-function Form({ id }) {
+function Form({ id, value }) {
   const context = useContext(DataContext);
   const { onSubmit } = context;
   const formik = useFormik({
     initialValues: {
-      title: "",
-      amount: "",
+      title: value.title,
+      amount: value.amount,
     },
     validate,
     onSubmit: (values) => {
@@ -56,7 +56,7 @@ function Form({ id }) {
             id="title"
             placeholder="Title..."
             className="form-control"
-            value={formik.title}
+            value={formik.values.title}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             autoComplete="off"

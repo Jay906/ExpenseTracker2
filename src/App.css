@@ -89,11 +89,23 @@ form {
 .overview .income-overview,
 .overview .expense-overview {
   position: relative;
-  width: 90%;
+  width: 100%;
   height: 45%;
   margin: auto;
 }
 
 .empty-div {
   height: 70px;
+}
+
+.delete {
+  background: #fff;
+  margin-top: 10px;
+}
+
+.delete h3 {
+  display: flex;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
 }

@@ -1,7 +1,6 @@
 import React from "react";
 
 function Select({ title, options, value, handleChange }) {
-  console.log(options, value);
   return (
     <>
       <label htmlFor="select">{title}</label>

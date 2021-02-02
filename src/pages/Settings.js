@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState } from "react";
 import { languages, currencies } from "../components/services";
 import { FaTrash } from "react-icons/fa";
 import { DataContext } from "../components/context";

@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./App.css";
 import Header from "./components/Header";
 import { Dashboard } from "./styled-component/styled-components";
-import { Switch, Link, Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import Choice from "./components/Choice";
 import Incomes from "./pages/Incomes";
 import Expenses from "./pages/Expenses";
@@ -12,7 +12,6 @@ import Settings from "./pages/Settings";
 import SinglePage from "./pages/SinglePage";
 import Transactions from "./pages/Transactions";
 import Overview from "./pages/Overview";
-import DataProvider from "./components/context";
 
 function App() {
   return (

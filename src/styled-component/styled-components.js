@@ -1,7 +1,7 @@
 import { colors } from "./colors";
 import styled from "styled-components";
 
-const { mainColor, secondaryColor, mainWhite, bgDanger, bgSuccess } = colors;
+const { mainColor, secondaryColor, mainWhite } = colors;
 
 export const Header = styled.header`
   display: flex;

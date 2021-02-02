@@ -63,7 +63,7 @@ function Transactions() {
         handleChange={handleChange}
       />
       <h2 className="single-item-header text-center">
-        Balance: {currency.value}
+        Balance: {currency}
         {balance}
       </h2>
       {sorted.map((item) => (
@@ -75,7 +75,10 @@ function Transactions() {
         >
           <div className="element-item">
             <div>{item.desc}</div>
-            <div className="text-center">{item.amount}</div>
+            <div className="text-center">
+              {currency}
+              {item.amount}
+            </div>
             <div className="text-center">{getTime(item.date)}</div>
           </div>
         </div>
