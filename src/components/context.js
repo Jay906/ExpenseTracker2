@@ -1,6 +1,6 @@
 import React, { createContext, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { currencies, languages } from "./services";
+import { currencies } from "./services";
 
 export const DataContext = createContext();
 
@@ -19,7 +19,6 @@ export default function DataProvider({
 
   const [settings, setSettings] = useState({
     currency: settingParams.currency || currencies[0].value,
-    language: settingParams.language || languages[0],
   });
 
   const { pathname } = useLocation();

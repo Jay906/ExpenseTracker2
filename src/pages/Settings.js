@@ -6,9 +6,7 @@ import Validate from "../components/Validate";
 
 function Settings() {
   const [delToggle, setDelToggle] = useState(false);
-  const { currency, changeSelect, deleteData, language } = useContext(
-    DataContext
-  );
+  const { currency, changeSelect, deleteData } = useContext(DataContext);
 
   const confirmation = (value) => {
     if (value === "delete data") {
@@ -20,19 +18,6 @@ function Settings() {
 
   return (
     <div>
-      <h3>Language: </h3>
-      <select
-        className="form-control"
-        name="language"
-        value={language}
-        onChange={(e) => changeSelect(e)}
-      >
-        {languages.map((language, index) => (
-          <option value={language} key={index}>
-            {language}
-          </option>
-        ))}
-      </select>
       <h3>Default currency</h3>
       <select
         className="form-control"
