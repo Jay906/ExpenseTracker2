@@ -10,7 +10,9 @@ function HeaderComponent() {
     <Header>
       <section className="header-top">
         <p className="success">Available Savings</p>
-        <h2>{currency} 0</h2>
+        <h2>
+          {currency} {balance}
+        </h2>
         <p>{getDate()}</p>
       </section>
       <div className="banner">

@@ -10,7 +10,6 @@ function SinglePage() {
   const [value, setValue] = useState({ title: "", amount: "" });
   const { id } = useParams();
   const { filterItems, deleteItem, editItem, currency } = context;
-  console.log(currency);
   const handleEdit = (id) => {
     const [item] = editItem(id);
     setValue({ title: item.desc, amount: item.amount });

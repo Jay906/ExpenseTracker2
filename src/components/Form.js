@@ -39,6 +39,8 @@ function Form({ id, value }) {
         date: new Date(),
         category: id,
       };
+      values.title = value.title;
+      values.amount = value.amount;
       onSubmit(newElement);
     },
   });
