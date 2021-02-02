@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { languages, currencies } from "../components/services";
+import { currencies } from "../components/services";
 import { FaTrash } from "react-icons/fa";
 import { DataContext } from "../components/context";
 import Validate from "../components/Validate";
