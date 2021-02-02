@@ -65,8 +65,8 @@ form {
 }
 
 .add {
-  position: absolute;
-  bottom: 5%;
+  position: fixed;
+  bottom: 11%;
   left: 90%;
   transform: translateX(-50%);
   font-size: 2rem;
@@ -92,4 +92,8 @@ form {
   width: 90%;
   height: 45%;
   margin: auto;
+}
+
+.empty-div {
+  height: 70px;
 }
