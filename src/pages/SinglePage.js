@@ -68,7 +68,7 @@ function SinglePage() {
     <div>
       Oops empty page
       <br />
-      <Form id={id} value={value} />
+      <Form id={id} value={value} show={show} handleShow={handleShow} />
     </div>
   );
 }
