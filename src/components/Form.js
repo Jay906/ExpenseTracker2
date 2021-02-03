@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { FormContainer } from "../styled-component/styled-components";
 import { DataContext } from "./context";
 import { useFormik } from "formik";
@@ -22,29 +22,26 @@ const validate = (values) => {
   return errors;
 };
 
-function Form({ id, value, show, handleShow }) {
+function Form({ id, value, show, handleShow, resetValue }) {
   const context = useContext(DataContext);
   const { onSubmit } = context;
+  console.log(value.title, value.amount, value.date);
   const formik = useFormik({
-    initialValues: {
-      title: value.title,
-      amount: value.amount,
-    },
+    initialValues: { ...value },
     validate,
-    onSubmit: (values) => {
+    enableReinitialize: true,
+    onSubmit: async (values) => {
       const newElement = {
         id: uuid(),
         desc: values.title,
         amount: Number(values.amount),
-        date: new Date(),
+        date: values.date ? values.date : new Date(),
         category: id,
       };
-      values.title = value.title;
-      values.amount = value.amount;
-      onSubmit(newElement);
+      await onSubmit(newElement);
+      resetValue();
     },
   });
-
   if (show) {
     return (
       <FormContainer show={show}>

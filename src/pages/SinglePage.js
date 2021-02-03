@@ -14,11 +14,22 @@ function SinglePage() {
   const handleShow = () => {
     setShow(!show);
   };
+
+  const resetValue = () => {
+    setValue({ title: "", amount: "" });
+  };
+
   const handleEdit = (id) => {
     const [item] = editItem(id);
     setShow(true);
-    setValue({ title: item.desc, amount: item.amount });
-    console.log(item, value);
+    const tempObj = {
+      title: item.desc,
+      amount: item.amount,
+      date: new Date(item.date),
+      id: item.id,
+    };
+    setValue(tempObj);
+    console.log(tempObj);
   };
 
   const _data = filterItems(id);
@@ -60,7 +71,13 @@ function SinglePage() {
           ))}
           <div className="empty-div"></div>
         </div>
-        <Form id={id} value={value} show={show} handleShow={handleShow} />
+        <Form
+          id={id}
+          value={value}
+          show={show}
+          handleShow={handleShow}
+          resetValue={resetValue}
+        />
       </SingleItemContainer>
     );
   }
@@ -68,7 +85,13 @@ function SinglePage() {
     <div className="center" style={{ height: "100%" }}>
       Nothing added yet...
       <br />
-      <Form id={id} value={value} show={show} handleShow={handleShow} />
+      <Form
+        id={id}
+        value={value}
+        show={show}
+        handleShow={handleShow}
+        resetValue={resetValue}
+      />
     </div>
   );
 }
