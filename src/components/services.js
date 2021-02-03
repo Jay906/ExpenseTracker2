@@ -37,7 +37,7 @@ export const getDate = () => {
 
 export const expenses = [
   {
-    title: "Food & Juice",
+    title: "Food & Drinks",
     image: <FastFood />,
     link: "/expenses/food",
   },

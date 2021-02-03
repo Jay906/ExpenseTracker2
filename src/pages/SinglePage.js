@@ -65,8 +65,8 @@ function SinglePage() {
     );
   }
   return (
-    <div>
-      Oops empty page
+    <div className="center" style={{ height: "100%" }}>
+      Nothing added yet...
       <br />
       <Form id={id} value={value} show={show} handleShow={handleShow} />
     </div>
