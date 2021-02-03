@@ -8,10 +8,15 @@ import Form from "../components/Form";
 function SinglePage() {
   const context = useContext(DataContext);
   const [value, setValue] = useState({ title: "", amount: "" });
+  const [show, setShow] = useState(false);
   const { id } = useParams();
   const { filterItems, deleteItem, editItem, currency } = context;
+  const handleShow = () => {
+    setShow(!show);
+  };
   const handleEdit = (id) => {
     const [item] = editItem(id);
+    setShow(true);
     setValue({ title: item.desc, amount: item.amount });
     console.log(item, value);
   };
@@ -55,7 +60,7 @@ function SinglePage() {
           ))}
           <div className="empty-div"></div>
         </div>
-        <Form id={id} value={value} />
+        <Form id={id} value={value} show={show} handleShow={handleShow} />
       </SingleItemContainer>
     );
   }

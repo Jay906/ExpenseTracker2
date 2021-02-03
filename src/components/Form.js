@@ -22,7 +22,7 @@ const validate = (values) => {
   return errors;
 };
 
-function Form({ id, value }) {
+function Form({ id, value, show, handleShow }) {
   const context = useContext(DataContext);
   const { onSubmit } = context;
   const formik = useFormik({
@@ -45,11 +45,9 @@ function Form({ id, value }) {
     },
   });
 
-  const [state, setState] = useState(true);
-
-  if (state) {
+  if (show) {
     return (
-      <FormContainer show={state}>
+      <FormContainer show={show}>
         <form onSubmit={formik.handleSubmit}>
           <label htmlFor="title">Title</label>
           <input
@@ -85,14 +83,14 @@ function Form({ id, value }) {
             Submit
           </button>
         </form>
-        <button className="x" onClick={() => setState(!state)}>
+        <button className="x" onClick={handleShow}>
           x
         </button>
       </FormContainer>
     );
   }
   return (
-    <button className="add" onClick={() => setState(!state)}>
+    <button className="add" onClick={handleShow}>
       +
     </button>
   );
