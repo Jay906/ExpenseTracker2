@@ -25,7 +25,6 @@ const validate = (values) => {
 function Form({ id, value, show, handleShow, resetValue }) {
   const context = useContext(DataContext);
   const { onSubmit } = context;
-  console.log(value.title, value.amount, value.date);
   const formik = useFormik({
     initialValues: { ...value },
     validate,
